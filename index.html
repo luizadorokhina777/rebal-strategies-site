@@ -1,36 +1,196 @@
-<!-- Contact Section -->
-<section id="contact">
-  <div class="container grid grid-2">
-    <div class="card">
-      <h3>Contact</h3>
-      <p class="small">Email: <a href="mailto:luizadorokhina@gmail.com">luizadorokhina@gmail.com</a></p>
-      <p class="small">Registered address: Ahtri tn 12, Kesklinna linnaosa, 15551 Tallinn, Estonia</p>
-      <p class="small">Registry code: 17289401 • VAT: EE102883989</p>
-      <p class="small">Bank: Wise Europe SA • IBAN: <em>add your IBAN here</em></p>
-    </div>
-    <div class="card">
-      <h3>Invoicing details</h3>
-      <ul class="list">
-        <li><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M3 4h18v2H3zm0 6h18v2H3zm0 6h18v2H3z"/></svg>Company: Rebal Strategies OÜ</li>
-        <li><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M3 12l2-2 4 4L21 4l2 2-14 14z"/></svg>VAT: EE102883989 (reverse charge where applicable)</li>
-        <li><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2L2 7l10 5 10-5-10-5zm0 7l-8-4 8-4 8 4-8 4zM2 17l10 5 10-5"/></svg>EU/UK/US B2B billing</li>
-      </ul>
-    </div>
-  </div>
-</section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rebal Strategies — Consulting & Performance Marketing</title>
+  <meta name="description" content="Rebal Strategies OÜ — consulting and performance marketing. EU/UK/US B2B billing. Tallinn, Estonia." />
 
-<!-- Team Section -->
-<section id="team">
-  <div class="container grid grid-2">
-    <div class="card">
-      <span class="badge">Director</span>
-      <h3 style="margin-top:8px">Luiza Dorokhina</h3>
-      <p class="muted">Director (Management Board Member). Oversees company administration and finance.</p>
+  <style>
+    :root{
+      --brand:#0e3a6d;           /* deep blue */
+      --brand-2:#1f5ea8;         /* accent blue */
+      --text:#1d2330;
+      --muted:#6b7280;
+      --bg:#ffffff;
+      --card:#f7f9fc;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
+    a{color:var(--brand-2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;height:auto;display:block}
+
+    /* Header / hero */
+    .hero{
+      position:relative;
+      min-height:58vh;
+      display:flex;
+      align-items:center;
+      background:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+      color:#fff;
+      isolation:isolate;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(160deg, rgba(14,58,109,.88), rgba(14,58,109,.55));
+      z-index:0;
+    }
+    .container{width:min(1100px,92%);margin:0 auto}
+    .topbar{
+      position:absolute;left:0;right:0;top:0;z-index:2;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:18px 4%;
+    }
+    .logo-wrap{display:flex;gap:12px;align-items:center}
+    .logo{height:36px;width:auto;filter:drop-shadow(0 1px 1px rgba(0,0,0,.2))}
+    .brand{font-weight:700;color:#fff;letter-spacing:.2px}
+
+    .cta{display:inline-block;background:#fff;color:var(--brand);padding:10px 16px;border-radius:8px;font-weight:600}
+    .cta:hover{background:#f0f4ff}
+
+    .hero-inner{position:relative;z-index:1;padding:110px 0 70px}
+    .hero h1{margin:0 0 10px;font-size:clamp(28px,4.5vw,44px);font-weight:800}
+    .hero p{margin:0 0 20px;color:#e8effa;max-width:720px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-block;border-radius:10px;padding:12px 18px;
+      font-weight:700;border:2px solid #fff;color:#fff
+    }
+    .btn.primary{background:#fff;color:var(--brand)}
+    .btn:hover{opacity:.9}
+
+    /* Sections */
+    section{padding:56px 0}
+    .card{
+      background:var(--card);border:1px solid #e6ebf3;border-radius:14px;padding:24px
+    }
+    .grid{display:grid;gap:22px}
+    @media(min-width:860px){.grid-2{grid-template-columns:1.3fr .9fr}}
+    .muted{color:var(--muted)}
+    h2{font-size:clamp(22px,3.5vw,30px);margin:0 0 14px}
+    h3{margin:18px 0 8px}
+
+    /* Invoicing list */
+    ul.clean{list-style:none;padding:0;margin:14px 0}
+    ul.clean li{padding-left:28px;position:relative;margin:8px 0}
+    ul.clean li:before{
+      content:"✓";position:absolute;left:0;top:0;color:var(--brand-2);font-weight:800
+    }
+
+    /* Footer */
+    footer{padding:34px 0;background:#0b2447;color:#b9c7e6}
+    footer a{color:#d7e3ff}
+    .small{font-size:13px}
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="topbar">
+      <div class="logo-wrap">
+        <img src="logo.png" alt="Rebal Strategies logo" class="logo">
+        <div class="brand">Rebal Strategies</div>
+      </div>
+      <a class="cta" href="#contact">Contact</a>
     </div>
-    <div class="card">
-      <span class="badge">Founder</span>
-      <h3 style="margin-top:8px">Victoria Rebal</h3>
-      <p class="muted">Founder & shareholder. Leads client strategy and performance marketing projects.</p>
+
+    <div class="container hero-inner">
+      <h1>Consulting & Performance Marketing for growth-focused brands</h1>
+      <p>
+        We help EU/UK/US clients scale paid media and search through pragmatic strategy,
+        rigorous testing and clean execution. Invoicing available across EU/UK/US (B2B).
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="mailto:luizadorokhina@gmail.com">Email us</a>
+        <a class="btn" href="#invoicing">Invoicing details</a>
+      </div>
     </div>
-  </div>
-</section>
+  </header>
+
+  <!-- ABOUT / SERVICES -->
+  <section id="about">
+    <div class="container grid grid-2">
+      <div class="card">
+        <h2>What we do</h2>
+        <p class="muted">
+          We partner with marketing and leadership teams to build high-performing acquisition funnels.
+          Typical work spans account audits, campaign rebuilds, advanced measurement and continuous
+          experimentation across Google Ads, Microsoft Ads and Apple Search Ads.
+        </p>
+        <h3>Core services</h3>
+        <ul class="clean">
+          <li>Performance marketing strategy & roadmapping</li>
+          <li>Google Ads / Microsoft Ads / Apple Search Ads management</li>
+          <li>Analytics & measurement setup (GA4, conversion pipelines)</li>
+          <li>Iterative testing (creative, audiences, bidding, landing)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Company</h2>
+        <p><strong>Director:</strong> Luiza Dorokhina</p>
+        <p class="muted">Oversees company administration & finance.</p>
+        <p><strong>Founder & Shareholder:</strong> Victoria Rebal</p>
+        <p class="muted">Leads client strategy and performance marketing projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVOICING -->
+  <section id="invoicing">
+    <div class="container">
+      <div class="card">
+        <h2>Invoicing details</h2>
+        <ul class="clean">
+          <li><strong>Company:</strong> Rebal Strategies OÜ</li>
+          <li><strong>Registry code:</strong> 17289401</li>
+          <li><strong>VAT:</strong> EE102883989 (reverse charge where applicable)</li>
+          <li><strong>Address:</strong> Ahtri tn 12, Kesklinna linnaosa, 15551 Tallinn, Estonia</li>
+          <li><strong>Bank:</strong> Wise Europe SA</li>
+          <li><strong>IBAN:</strong> <em>add your IBAN here</em></li>
+          <li><strong>Billing:</strong> EU/UK/US B2B</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container grid grid-2">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>
+          Email: <a href="mailto:luizadorokhina@gmail.com">luizadorokhina@gmail.com</a><br />
+          Registered address: Ahtri tn 12, 15551 Tallinn, Estonia
+        </p>
+        <p class="muted small">
+          We typically reply within 1–2 business days.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Why work with us</h2>
+        <ul class="clean">
+          <li>Senior-level execution with transparent reporting</li>
+          <li>Pragmatic, test-driven growth methodology</li>
+          <li>Flexible collaboration, clear deliverables</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container small">
+      © <span id="y"></span> Rebal Strategies OÜ — Registry code 17289401 — VAT EE102883989
+      • <a href="#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
